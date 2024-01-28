@@ -18,4 +18,4 @@ ansible-playbook --ask-become-pass <playbook-name>.yml
 ## List of playbooks
 | file | description |
 | ------ | ------ |
-| custom_prompt.yml | customization for **PS1** variable |
+| [custom_prompt](custom_prompt.yml) | customization for **PS1** variable |
