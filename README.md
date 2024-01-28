@@ -14,3 +14,8 @@ ssh-copy-id -i ~/.ssh/ansible.pub <user>@<host>
 ```sh
 ansible-playbook --ask-become-pass <playbook-name>.yml
 ```
+
+## List of playbooks
+| file | description |
+| ------ | ------ |
+| custom_prompt.yml | customization for **PS1** variable |
