@@ -1,6 +1,7 @@
-## Info
 > [!CAUTION]
 > To be used locally only for testing purposes.
+
+## Info
 You can spin Ubuntu container if no remote target for testing Ansible playbooks is available.
 
 ## Prerequisities
