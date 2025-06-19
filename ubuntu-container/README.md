@@ -22,7 +22,7 @@ You can spin Ubuntu container if no remote target for testing Ansible playbooks 
 ```bash
 # You can test if everyhing is working correctly by running provided playbook.
 # You will be prompted to provide root password (password: "root"):
-ansible-playbook --ask-become-pass custom_prompt.yml # uses prompt from current user and sets it for "root" in the container
+ansible-playbook custom_prompt.yml # uses prompt from current user and sets it for "root" in the container
 ```
 
 ## SSH into the target
