@@ -10,6 +10,9 @@ ssh-copy-id -i ~/.ssh/ansible.pub <user>@<host>
 ```
 - in **ansible.cfg** file -> specify **remote user**
 
+## If no remote target is available
+- you can test playbooks on Ubuntu running inside container (see **ubuntu-container** folder)
+
 ## Running playbook
 ```sh
 ansible-playbook --ask-become-pass <playbook-name>.yml
