@@ -20,6 +20,15 @@ MAX_CONTAINERS=10
 CONTAINER_IDX=1
 NAME=ubu-ssh
 
+function _exit_on_missing_dependency() {
+    [[ $# -eq 0 ]] && echo "no argument provided" && exit 42
+
+    for dependency in "$@"; do
+        command -v $dependency >/dev/null 2>&1 || \
+        (echo "'$dependency' is not installed" && exit 42)
+    done
+}
+
 function _fn_exit_on_already_running_container() {
     if [[ $(docker inspect -f '{{.State.Running}}' $NAME 2> /dev/null) = "true" ]]; then
         >&2 echo "container is already running!"
@@ -41,6 +50,8 @@ function _fn_run_container() {
 }
 
 ################## MAIN PROCEDURE ##################
+_exit_on_missing_dependency docker sshpass ansible
+
 if [[ $# -gt 0 ]]; then
     iterations=$(($1)) # if error on int(input), result will be "0"
 
