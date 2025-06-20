@@ -20,7 +20,7 @@ MAX_CONTAINERS=10
 CONTAINER_IDX=1
 NAME=ubu-ssh
 
-function _exit_on_missing_dependency() {
+function _fn_exit_on_missing_dependency() {
     [[ $# -eq 0 ]] && echo "no argument provided" && exit 42
 
     for dependency in "$@"; do
@@ -50,7 +50,7 @@ function _fn_run_container() {
 }
 
 ################## MAIN PROCEDURE ##################
-_exit_on_missing_dependency docker sshpass ansible
+_fn_exit_on_missing_dependency docker sshpass ansible
 
 if [[ $# -gt 0 ]]; then
     iterations=$(($1)) # if error on int(input), result will be "0"
