@@ -6,7 +6,8 @@ You can spin Ubuntu container if no remote target for testing Ansible playbooks 
 
 ## Prerequisities
 - [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html) installed
-- "ansible key" key-pair present in "~/.ssh/ansible" on host machine
+- [Docker](https://docs.docker.com/engine/install/) installed
+- [SSHPass util](https://gist.github.com/arunoda/7790979) installed
 
 ## Running Ubuntu Container
 ```bash
