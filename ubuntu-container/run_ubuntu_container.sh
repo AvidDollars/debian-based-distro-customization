@@ -36,10 +36,9 @@ function _fn_run_container() {
     docker run --rm -itd --name $name $name /bin/bash -c '/etc/init.d/ssh start && /bin/bash' && \
     IP=$(docker inspect --format "{{ .NetworkSettings.IPAddress }}" $name) && \
     ssh-keygen -f "/home/$USER/.ssh/known_hosts" -R $IP && \
-    ssh-copy-id -i ~/.ssh/ansible.pub root@$IP # TODO: use "sshpass" so that script in non-interactive
+    sshpass -p root ssh-copy-id -o StrictHostKeyChecking=no -i ~/.ssh/ansible.pub root@$IP
     echo $IP >> inventory
 }
-
 
 ################## MAIN PROCEDURE ##################
 if [[ $# -gt 0 ]]; then
