@@ -27,5 +27,14 @@ ansible-playbook custom_prompt.yml # uses prompt from current user and sets it f
 
 ## SSH into the target
 ```bash
+# IP address from first line in ./inventory will be used
 ./ssh_to_target
+
+# takes IP from line (index starts from 1) 
+./ssh_to_target <line-num>
+```
+
+## Killing running containers
+```bash
+./kill_containers.sh
 ```
