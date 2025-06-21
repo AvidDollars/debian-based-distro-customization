@@ -41,7 +41,7 @@ function _fn_exit_on_already_running_container() {
 function _fn_run_container() {
     local name=$NAME-$CONTAINER_IDX
 
-    docker build -t $name . && \
+    docker build -t $name --build-arg IMAGE_NAME=ubuntu . && \
     docker run --rm -itd --name $name $name /bin/bash -c '/etc/init.d/ssh start && /bin/bash' && \
     IP=$(docker inspect --format "{{ .NetworkSettings.IPAddress }}" $name) && \
     ssh-keygen -f "/home/$USER/.ssh/known_hosts" -R $IP && \
