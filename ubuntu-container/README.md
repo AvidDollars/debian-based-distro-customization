@@ -33,6 +33,9 @@ ansible-playbook custom_prompt.yml # uses prompt from current user and sets it f
 
 # takes IP from line (index starts from 1) 
 ./ssh_to_target <line-num>
+
+# or pick IP address interactively
+./interactive_ssh_to_target.sh
 ```
 
 ## Killing running containers
