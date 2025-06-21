@@ -1,6 +1,10 @@
 > [!CAUTION]
 > To be used locally only for testing purposes.
 
+> [!WARNING]
+> Running the scripts may overwrite the content of "/home/$USER/.ssh/known_hosts" file
+> Before spinning containers, entries for their private IP addressess are removed from SSH known hosts
+
 ## Info
 You can spin Ubuntu container if no remote target for testing Ansible playbooks is available.
 
