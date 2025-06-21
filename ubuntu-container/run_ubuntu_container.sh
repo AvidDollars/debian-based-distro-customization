@@ -67,6 +67,7 @@ fi
 echo -n > inventory # clears previous inventory file
 
 CONTAINERS_COUNT="$1"
+./kill_containers.sh &> /dev/null || true
 
 for idx in $(seq 1 $iterations); do
     CONTAINER_IDX=$idx
