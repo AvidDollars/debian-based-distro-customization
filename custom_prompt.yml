@@ -7,7 +7,7 @@
   - name: Copy file with custom prompt to managed host
     ansible.builtin.copy:
       src: ./.bash_prompt
-      dest: "/home/{{ ansible_user }}/"
+      dest: "~"
       owner: '{{ ansible_user }}'
       group: '{{ ansible_user }}'
 
@@ -15,6 +15,6 @@
     blockinfile:
       state: present
       insertafter: EOF
-      dest: "/home/{{ ansible_user }}/.bashrc"
+      dest: "~/.bashrc"
       content: "source ~/.bash_prompt"
         
