@@ -1,7 +1,11 @@
 ARG IMAGE_NAME=ubuntu
-FROM ${IMAGE_NAME}
+ARG VERSION=latest
+FROM ${IMAGE_NAME}:${VERSION}
 
-RUN apt update -y && apt upgrade -y && apt install openssh-server -y
+ARG PACKAGE_MANAGER=apt
+RUN ${PACKAGE_MANAGER} update -y && \
+    ${PACKAGE_MANAGER} upgrade -y && \
+    ${PACKAGE_MANAGER} install openssh-server -y
 
 ARG FILE="/etc/ssh/sshd_config"
 RUN echo "PasswordAuthentication yes" >> "${FILE}"  
